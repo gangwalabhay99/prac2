@@ -1,0 +1,25 @@
+name: shell command
+
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello world
+        run: echo "hello world"
+      - name: 12 table
+        run: |
+          num = 13
+          for i in range(1, 11):
+            print(num, 'x', i, '=', num*i)
+        shell: python
+  power-shell-command:
+    runs-on: windows-latest
+    steps:
+      - name: print hello world
+        run: echo "hello world"
+      - name: power shell command
+        run: |
+          get-location
+          ls
