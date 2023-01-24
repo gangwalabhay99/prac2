@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: CourseList
+  labels: 
+    app: cl
+spec:
+  containers:
+  - name: CourseList
+    image: gangwalabhay99/repo:latest
+    ports:
+    - containerPort: 80

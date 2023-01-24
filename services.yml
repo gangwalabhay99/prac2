@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: CL-service
+  labels:
+    app: cl
+spec:
+  type: LoadBalancer
+  selector:
+    app: cl
+  ports:
+    - port: 8080
+      targetPort: 8080
+  
