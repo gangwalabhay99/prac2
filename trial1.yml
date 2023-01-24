@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: print hello world
         run: echo "hello world"
-      - name: 12 table
+      - name: 13 table
         run: |
           num = 13
           for i in range(1, 11):
