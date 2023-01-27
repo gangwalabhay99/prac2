@@ -1,0 +1,29 @@
+name: shell command
+
+on: [push]
+
+jobs:
+  run-github-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: list of files before
+        run: |
+          ls 
+          pwd
+
+      - name: github checkout action
+        uses: actions/checkout@v3.3.0
+
+      - name: list of files after using action
+        run: |
+          ls 
+          pwd
+
+      - name: GREETING hello using JS
+        id: greet
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: Mr. Abhay Gangwal
+
+      - name: time at which hello was greeted
+        run: echo "${{steps.greet.outputs.time}}"
