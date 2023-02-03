@@ -1,0 +1,19 @@
+name: shell command
+
+on: [push]
+
+jobs:
+  decrypting-the-encrypting-file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: decrypting gpg file
+        env:
+          gpgpass: ${{secrets.PASSCODEGPG}}
+        run: |
+          gpg  --quiet --batch --yes --decrypt --passphrase="$gpgpass" --output $HOME/decrypt.yml try.yml.gpg
+
+      - name: to check file content
+        run: |
+          cat $HOME/decrypt.yml
