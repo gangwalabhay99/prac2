@@ -28,7 +28,7 @@ jobs:
         run: echo '${{ toJSON(job) }}'
 
       - name: Dump steps context
-        run: echoo '${{ toJSON(steps) }}'
+        run: echo '${{ toJSON(steps) }}'
       - name: Dump runner context
         if: always()
         #will run this in every case wheather there is any mistake in code
