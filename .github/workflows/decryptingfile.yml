@@ -12,7 +12,7 @@ jobs:
         env:
           gpgpass: ${{secrets.PASSCODEGPG}}
         run: |
-          gpg  --batch --yes --decrypt --passphrase="$gpgpass" --output $HOME/decrypt.yml try.yml.gpg
+          gpg  --quiet --batch --yes --decrypt --passphrase="$gpgpass" --output $HOME/encryptedFileName.yml try.yml.gpg
 
       - name: to check file content
         run: |
