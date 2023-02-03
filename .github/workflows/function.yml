@@ -1,5 +1,5 @@
 name: function testing
-on: push
+on: [push, pull_request]
 jobs:
   function:
     runs-on: ubuntu-latest
@@ -13,17 +13,30 @@ jobs:
 
   dump_contexts_to_log:
     runs-on: ubuntu-latest
+
+    if: github.event_name == 'push'
+
     steps:
       - name: Dump GitHub context
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
       - name: Dump job context
+
+        if: failure()
+        # it is used lets just suppose upper code doesn't work, so in that case our workflow will stop
+        #  working. To make pipeline work even if there is mistake in above code we use failure function
         run: echo '${{ toJSON(job) }}'
+
       - name: Dump steps context
-        run: echo '${{ toJSON(steps) }}'
+        run: echoo '${{ toJSON(steps) }}'
       - name: Dump runner context
+        if: always()
+        #will run this in every case wheather there is any mistake in code
         run: echo '${{ toJSON(runner) }}'
+
       - name: Dump strategy context
         run: echo '${{ toJSON(strategy) }}'
+
+        if: always()
       - name: Dump matrix context
         run: echo '${{ toJSON(matrix) }}'
