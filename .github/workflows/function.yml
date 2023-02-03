@@ -7,7 +7,7 @@ jobs:
       - name: dump
         run: |
           echo ${{ contains ('helllloo','lo') }}
-          echo ${{ startWith ('abhay','ab') }}
+          echo ${{ startsWith ('abhay','ab') }}
           echo ${{ endsWith ('gkuguygkyugkuyguf','uf') }}
           echo ${{ format ('Hello {0} {1} {2}','World','!','!') }}
 
