@@ -16,4 +16,4 @@ jobs:
 
       - name: to check file content
         run: |
-          cat $HOME/decrypt.yml
+          cat $HOME/encryptedfilename.yml
