@@ -1,4 +1,4 @@
-name: docker container
+name: docker container python
 on: push
 
 jobs:
