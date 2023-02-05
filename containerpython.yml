@@ -1,0 +1,16 @@
+name: docker container python
+on: push
+
+jobs:
+  docker_container:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.10.9-alpine3.16
+    steps:
+      - name: python image and version check
+        run: |
+          python --version
+
+      - name: python table
+        run: |
+          print("Hello")
