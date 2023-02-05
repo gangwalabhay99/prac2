@@ -1,4 +1,4 @@
-name: MatrixIncludingExcluding
+name: Matrix including excluding
 on: push
 
 jobs:
