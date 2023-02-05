@@ -1,17 +1,13 @@
 name: docker container
 on: push
+
 jobs:
   docker_container:
     runs-on: ubuntu-latest
     container:
-      image: python:3.10.9-windowsservercore-ltsc2022
+      image: node:18-alpine3.16
     steps:
-      - name: python image and version check
+      - name: node image and version check
         run: |
-          python --version
+          node -v
           cat /etc/os-release
-      - name: python table
-        run: |
-          num = 181
-          for i in range(1, 11):
-          print(num, 'x', i, '=', num*i)
