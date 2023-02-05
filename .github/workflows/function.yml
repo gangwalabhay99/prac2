@@ -24,7 +24,7 @@ jobs:
 
         if: failure()
         # it is used lets just suppose upper code doesn't work, so in that case our workflow will stop
-        #  working. To make pipeline work even if there is mistake in above code we use failure function
+        #  working. To make a particular code work  even if there is mistake in above code we use failure function
         run: echo '${{ toJSON(job) }}'
 
       - name: Dump steps context
