@@ -5,7 +5,7 @@ jobs:
   docker_container:
     runs-on: ubuntu-latest
     container:
-      image: python:3.10.9-windowsservercore-ltsc2022
+      image: python:3.10.9-alpine3.16
     steps:
       - name: python image and version check
         run: |
