@@ -13,4 +13,4 @@ jobs:
 
       - name: python table
         run: |
-          print("hello love!")
+          print('Hello, world!')
